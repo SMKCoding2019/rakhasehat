@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "319654475917",
+    "firebase_url": "https://kantinku-8e1ad.firebaseio.com",
+    "project_id": "kantinku-8e1ad",
+    "storage_bucket": "kantinku-8e1ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:319654475917:android:c8178c57ff1397c6",
+        "android_client_info": {
+          "package_name": "example.rakhasehat.com.kantinku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "319654475917-fa50lputh54imrep5retsckai84k4udi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "example.rakhasehat.com.kantinku",
+            "certificate_hash": "c84d3df3d3fe57129a93525482ca615d563c46a0"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA94etHA9DYhSsnxPBqXmufruWvAzd3vU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "319654475917-aj82jtmutp42c97rm6vbitj4ems01c83.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
