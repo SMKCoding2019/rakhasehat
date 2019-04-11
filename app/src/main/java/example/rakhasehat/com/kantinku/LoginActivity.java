@@ -1,6 +1,7 @@
 package example.rakhasehat.com.kantinku;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,9 +16,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import example.rakhasehat.com.kantinku.Common.Common;
 import example.rakhasehat.com.kantinku.Model.User;
 
 public class LoginActivity extends AppCompatActivity {
+    //Inisialisasi Variabel
     EditText edtPhone, edtPass;
     Button btnSignIn;
 
@@ -39,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 final ProgressDialog mDialog = new ProgressDialog(LoginActivity.this);
-                mDialog.setMessage("Please Wait....");
+                mDialog.setMessage("Tunggu Sebentar....");
                 mDialog.show();
 
                 table_user.addValueEventListener(new ValueEventListener() {
@@ -53,12 +56,18 @@ public class LoginActivity extends AppCompatActivity {
                             mDialog.dismiss();
                             User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(edtPass.getText().toString())) {
-                                Toast.makeText(LoginActivity.this, "Sign In Success", Toast.LENGTH_SHORT).show();
+                                {
+                                    Intent home = new Intent(LoginActivity.this, Home.class);
+                                    Common.currentUser = user;
+                                    startActivity(home);
+                                    finish();
+                                }
+//                                Toast.makeText(LoginActivity.this, "Login Berhasil", Toast.LENGTH_SHORT).show();
                             } else {
-                                Toast.makeText(LoginActivity.this, "Sign In Failed!!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Login Gagal!!!", Toast.LENGTH_SHORT).show();
                             }
                         }else{
-                            Toast.makeText(LoginActivity.this, "User Not Exist!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "User Belum Terdaftar!!", Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
